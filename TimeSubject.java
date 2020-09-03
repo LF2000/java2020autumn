@@ -1,0 +1,21 @@
+package qdu;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created and wrote class TimeSubject according to the class diagram.
+ */
+public abstract class TimeSubject {
+	protected Map<String, Clock> clocks = new HashMap<>();
+	
+	public void attach(String cityName, Clock clock) {
+		clocks.put(cityName, clock);
+	}
+	
+	public void detach(String cityName) {
+		clocks.remove(cityName);
+	}
+	
+	public abstract void notifyAllClocks();
+}
